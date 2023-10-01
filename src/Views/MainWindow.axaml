@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:YAAM.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="YAAM.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="YAAM"
+        Width="720" Height="350"
+        MinWidth="550" MinHeight="300"
+        xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid RowDefinitions="*, *, *"  Margin="4">
+        <lvc:CartesianChart
+            Series="{Binding Series}"
+            YAxes="{Binding YAxes}"
+            XAxes="{Binding XAxes}"
+            Grid.Row="0">
+        </lvc:CartesianChart>
+        <Grid RowDefinitions="*" ColumnDefinitions="*, *, *, *" Grid.Row="1">
+            <TextBlock Name="MemTotal" Text="{Binding MemTotal}" Grid.Row="0" Grid.Column="0"/>
+            <TextBlock Name="MemFree" Text="{Binding MemFree}" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock Name="MemAvailable" Text="{Binding MemAvailable}" Grid.Row="0" Grid.Column="2"/>
+            <TextBlock Name="MemUsed" Text="{Binding MemUsed}" Grid.Row="0" Grid.Column="3"/>
+        </Grid>
+    </Grid>
+</Window>
