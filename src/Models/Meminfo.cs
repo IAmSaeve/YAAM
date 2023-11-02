@@ -1,6 +1,8 @@
-namespace YAAM;
+namespace YAAM.Models;
 
-record Meminfo(MeminfoReading? MemTotal, MeminfoReading? MemFree, MeminfoReading? MemAvailable)
+internal record Meminfo(MeminfoReading? MemTotal, MeminfoReading? MemFree, MeminfoReading? MemAvailable)
 {
-    public Meminfo() : this(default, default, default) { }
+    public Meminfo() : this(default, default, default)
+    {
+    }
 }

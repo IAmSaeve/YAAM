@@ -1,3 +1,3 @@
-namespace YAAM;
+namespace YAAM.Models;
 
-record MeminfoReading(string Name, decimal Value, string Unit);
+internal record MeminfoReading(string Name, decimal Value, string Unit);

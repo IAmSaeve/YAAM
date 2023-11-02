@@ -15,21 +15,20 @@
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </Design.DataContext>
-    
-    <Grid RowDefinitions="*, *, *"  Margin="4">
+
+    <Grid RowDefinitions="*, *, *" Margin="4">
         <lvc:CartesianChart
             Series="{Binding Series}"
             YAxes="{Binding YAxes}"
             XAxes="{Binding XAxes}"
-            Grid.Row="0">
-        </lvc:CartesianChart>
+            Grid.Row="0" />
         <Grid RowDefinitions="*" ColumnDefinitions="*, *, *, *" Grid.Row="1">
-            <TextBlock Name="MemTotal" Text="{Binding MemTotal}" Grid.Row="0" Grid.Column="0"/>
-            <TextBlock Name="MemFree" Text="{Binding MemFree}" Grid.Row="0" Grid.Column="1"/>
-            <TextBlock Name="MemAvailable" Text="{Binding MemAvailable}" Grid.Row="0" Grid.Column="2"/>
-            <TextBlock Name="MemUsed" Text="{Binding MemUsed}" Grid.Row="0" Grid.Column="3"/>
+            <TextBlock Name="MemTotal" Text="{Binding MemTotal}" Grid.Row="0" Grid.Column="0" />
+            <TextBlock Name="MemFree" Text="{Binding MemFree}" Grid.Row="0" Grid.Column="1" />
+            <TextBlock Name="MemAvailable" Text="{Binding MemAvailable}" Grid.Row="0" Grid.Column="2" />
+            <TextBlock Name="MemUsed" Text="{Binding MemUsed}" Grid.Row="0" Grid.Column="3" />
         </Grid>
     </Grid>
 </Window>
